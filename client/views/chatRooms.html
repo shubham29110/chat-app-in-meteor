@@ -1,0 +1,12 @@
+<template name="chatRooms">
+  <h1>Chat rooms</h1>
+  {{#each chatRooms}}
+    <p><a href="{{pathFor 'chatRoom' _id=_id}}">{{name}}</a>
+     {{#if canDeleteChatroom chatRooms._id}}
+      <button class="delete-chatRoom">Delete</button>
+      {{/if}}
+    </p>
+  {{else}}
+    <p>No chat rooms.</p>
+  {{/each}}
+</template>
