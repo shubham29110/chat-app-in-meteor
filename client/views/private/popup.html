@@ -8,26 +8,7 @@
             <div class="popup-head-left pull-left">
                 <img src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" alt="iamgurdeeposahan">{{userName}} </div>
             <div class="popup-head-right pull-right">
-                <div class="btn-group">
-                    <button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">
-                        <i class="glyphicon glyphicon-cog"></i>
-                    </button>
-                    <ul role="menu" class="dropdown-menu pull-right">
-                        <li>
-                            <a href="#">Media</a>
-                        </li>
-                        <li>
-                            <a href="#">Block</a>
-                        </li>
-                        <li>
-                            <a href="#">Clear Chat</a>
-                        </li>
-                        <li>
-                            <a href="#">Email Chat</a>
-                        </li>
-                    </ul>
-                </div>
-
+                
                 <button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button">
                     <i class="glyphicon glyphicon-off"></i>
                 </button>
@@ -62,7 +43,7 @@
                     </div>
 
                     <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-timestamp pull-right">{{createdAt}}</span>
+                        <span class="direct-chat-timestamp pull-right">{{formatDate createdAt}}</span>
                     </div>
 
                     {{else}}

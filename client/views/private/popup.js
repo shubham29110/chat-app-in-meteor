@@ -1,28 +1,33 @@
 
 Template.popupbox.helpers({
-    'msgs':function(){
+    msgs:function(){
         var result=UserRooms.findOne({_id:Session.get('roomid')});
-       console.log('user----- id: ', result)
+       
         if(result){
             //result.userId = result.chatIds[1];
           return result.messages;
         }
     },
-    "userName":function(){
+    userName:function(){
         var result= UserRooms.findOne({_id:Session.get('roomid')})
         if(result){
-            var uid= result.chatIds[1];
+            var uid= result.chatIds[0];
+            if(uid==Meteor.userId()){
+                uid = result.chatIds[1]
+               
+            }
             return Meteor.users.findOne({_id:uid}).username
         }
     },
     inOrOut:function(userid){
-        console.log("uefctgctcftcftctrid",userid )
+        
         if(userid==Meteor.userId()){
         return true
         }else{
             return false
         }
-    }
+    },
+   
 });
 
 
