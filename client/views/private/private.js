@@ -22,6 +22,7 @@ Template.sidebar.events({
             //no room exists
             var newRoom= UserRooms.insert({chatIds:[this._id , Meteor.userId()],messages:[]});
             Session.set('roomid',newRoom);
+            Session.set('userid',)
         }
     }
 });
@@ -42,9 +43,11 @@ Template.input.events = {
         {
               var name = Meteor.user().username;
               var message = document.getElementById('message');
+
     
               if (message.value !== '') {
                 var de=UserRooms.update({"_id":Session.get("roomid")},{$push:{messages:{
+          
                  name: name,
                  text: message.value,
                  createdAt: Date.now()

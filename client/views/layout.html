@@ -1,23 +1,31 @@
-<head>
-  <title>chat</title>
-</head>
-
-<body>
-  
-</body>
 
 <template name="layout">
-  <h1>Onilne Chat System</h1>
+
+  {{> bootstrap}}
   {{> loginButtons}}
-  <br>
-  <br>
-  
-  {{#if currentUser}}
-    <p>
-      <a href="{{pathFor 'createChatRoom'}}">Create a chat room</a> |
-      <a href="{{pathFor 'chatRooms'}}">List of chat rooms</a> | 
-      <a href="{{pathFor 'private'}}">See who is online</a>
-    </p>
-  {{/if}}
   {{> yield}}
+  <br>
+  <br>
+  <br>
+  <br>
+  </template>
+
+
+<template name="bootstrap">
+      
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="{{pathFor 'chat'}}">Online Chat System</a>
+          </div>
+          <ul class="nav navbar-nav">
+              {{#if currentUser}}
+            <li class="active"><a href="{{pathFor 'createChatRoom'}}">Create a chat room</a> </li>
+            <li><a href="{{pathFor 'chatRooms'}}">List of chat rooms</a> </li>
+            <li><a href="{{pathFor 'private'}}">See who is online</a></li>
+            {{/if}}
+
+          </ul>
+        </div>
+      </nav>
 </template>

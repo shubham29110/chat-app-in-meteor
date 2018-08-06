@@ -17,6 +17,7 @@ Meteor.methods({
     console.log('Adding message: ', new Date());
   
     return Messages.insert({
+      userId:Meteor.userId(),
       username: Meteor.user().username,
       text: data.message,
       timestamp: Date.now(),
@@ -36,5 +37,8 @@ Meteor.methods({
       userId: Meteor.userId(),
       timestamp: Date.now()
     });
+  },
+  deleteChatRoom:function(id){
+    ChatRooms.remove(id);
   }
 });
