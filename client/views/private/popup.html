@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-timestamp pull-right">{{createdAt}}</span>
+                        <span class="direct-chat-timestamp pull-right">{{formatDate createdAt}}</span>
                     </div>
 
 
@@ -77,20 +77,7 @@
 
             <textarea id="messagea" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
 
-            <div class="btn-footer">
-                <button class="bg_none">
-                    <i class="glyphicon glyphicon-film"></i>
-                </button>
-                <button class="bg_none">
-                    <i class="glyphicon glyphicon-camera"></i>
-                </button>
-                <button class="bg_none">
-                    <i class="glyphicon glyphicon-paperclip"></i>
-                </button>
-                <button class="bg_none pull-right">
-                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                </button>
-            </div>
+            
         </div>
     </div>
 </template>
