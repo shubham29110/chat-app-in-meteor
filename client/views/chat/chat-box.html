@@ -14,7 +14,12 @@
                       <div class="outgoing_msg">
                             <div class="sent_msg">
                                 <p> <strong><a style="color:whitesmoke" href="{{pathFor 'userProfile' username=username}}">{{username}}</a>:</strong> </p>
-                              <p>{{text}}</p>
+                              <p>{{text}}  
+                                  {{#if canDelete}}
+                                <button class="delete-msg">Delete</button>
+                                {{/if}}
+                              </p>
+                             
                               <span class="time_date"> {{formatDate timestamp}}</span> </div>
                           </div>     
 
@@ -24,7 +29,11 @@
                             <div class="received_msg">
                               <div class="received_withd_msg">
                                     <p> <strong> <a style="color:whitesmoke" href="{{pathFor 'userProfile' username=username}}">{{username}}</a>: </strong> </p>
-                                    <p>{{text}}</p>
+                                    <p>{{text}}
+                                        {{#if canDelete}}
+                                <button class="delete-msg">Delete</button>
+                                          {{/if}}
+                                    </p>
                                     <span class="time_date"> {{formatDate timestamp}}</span></div>
                             </div>
                           </div>

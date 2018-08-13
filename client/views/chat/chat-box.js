@@ -9,7 +9,10 @@ Template.chatbox.helpers({
     },
 
     chatList:function(){
-        return Messages.find().fetch()
+        return Messages.find({}, { sort: { timestamp: -1 }}).fetch()
+    },
+    canDelete: function() {
+      return App.canDeleteMessage(this.username);
     }
 })
 

@@ -1,41 +1,26 @@
 <template name="popupbox">
-
-
-
-
-    <div class="popup-box chat-popup" id="qnimate">
-        <div class="popup-head">
-            <div class="popup-head-left pull-left">
-                <img src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" alt="iamgurdeeposahan">{{userName}} </div>
-            <div class="popup-head-right pull-right">
+        <div class="popup-box chat-popup" id="qnimate">
+                <div class="popup-head">
+                    <div class="popup-head-left pull-left">
+                        <img src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" alt="iamgurdeeposahan">{{userName}} </div>
+                            <div class="popup-head-right pull-right">
                 
-                <button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button">
+                        <button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button">
                     <i class="glyphicon glyphicon-off"></i>
                 </button>
             </div>
         </div>
         <div class="popup-messages">
-
-
-
-
             <div class="direct-chat-messages">
-
-
-
-
-
                 <!-- Message. Default to the left -->
                 <div class="direct-chat-msg doted-border">
                     {{#each msgs}} 
                     {{#if inOrOut user_id}}
-
                     <!-- reply -->
                     <div class="direct-chat-info clearfix">
                         <span class="direct-chat-img-reply-small pull-left">
-
                         </span>
-                        <span class="direct-chat-reply-name">{{name}}</span>
+                    <span class="direct-chat-reply-name">{{name}}</span>
                     </div>
 
                     <div class="direct-chat-text">
@@ -62,22 +47,13 @@
                     <div class="direct-chat-info clearfix">
                         <span class="direct-chat-timestamp pull-right">{{formatDate createdAt}}</span>
                     </div>
-
-
                     <!-- /.direct-chat-text -->{{/if}} {{/each}}
                 </div>
-
                 <!-- /.direct-chat-msg -->
-
-
-
             </div>
         </div>
         <div class="popup-messages-footer">
-
-            <textarea id="messagea" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
-
-            
+                <textarea id="messagea" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
         </div>
     </div>
 </template>

@@ -4,4 +4,8 @@ Template.registerHelper("canDeleteChatroom",function(chatroomUsername){
     Roles.userIsInRole(Meteor.userId(), 'admin', 'all');
   })
 
+  Template.registerHelper('formatDate', function(timestamp) {
+    var date = new Date(timestamp);
+    return date.toLocaleString();
+  });
 

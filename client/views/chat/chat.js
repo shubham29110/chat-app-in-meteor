@@ -34,6 +34,7 @@ Template.chat.events({
     console.log(this);
   },
   'click .delete-msg': function(evt, tpl) {
+    console.log(("+++++++++++++"+this._id));
     Messages.remove(this._id);
   }
 });
